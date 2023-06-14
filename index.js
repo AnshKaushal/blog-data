@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000
 const connection = mysql.createConnection(process.env.DATABASE_URL)
 
 app.get('/api/data', (req, res) => {
-    connection.query('SELECT * FROM  Products', (error, results) => {
+    connection.query('SELECT * FROM  posts', (error, results) => {
       if (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ error: 'Internal server error' });
